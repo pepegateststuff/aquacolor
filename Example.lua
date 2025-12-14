@@ -651,6 +651,6 @@ Library.ToggleKeybind = Options.MenuKeybind -- Allows you to have a custom keybi
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings()
 --SaveManager:SetIgnoreIndexes({ "MenuKeybind" }) MENU KB IS SAVED ON CONFIG
-SaveManager:SetFolder("MyScriptHub/specific-game")
+SaveManager:SetFolder("AquaHub/" .. tostring(game.PlaceId))
 SaveManager:BuildConfigSection(Tabs["UI Settings"])
 SaveManager:LoadAutoloadConfig()
