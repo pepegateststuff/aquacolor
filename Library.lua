@@ -5257,9 +5257,15 @@ function Library:CreateWindow(WindowInfo)
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
             Parent = MainFrame,
         })
-		New("UIStroke", {
-			
-		})
+		for i = 1,6,1 do
+		    New("UIStroke", {
+	            u.Color = Color3.fromRGB(79, 248, 255)
+			    u.Thickness = i
+			    u.Transparency = i/10+0.4
+	            Parent = MainFrame,
+	        })
+		end
+	
         do
             local Lines = {
                 {
