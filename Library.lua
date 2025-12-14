@@ -5324,7 +5324,7 @@ function Library:CreateWindow(WindowInfo)
         if WindowInfo.Icon then
             New("ImageLabel", {
                 --Image = if tonumber(WindowInfo.Icon) then `rbxassetid://{WindowInfo.Icon}` else WindowInfo.Icon,
-                Image = CheckIcon("droplet")
+                Image = GetIcon("droplet").Url
 				Size = WindowInfo.IconSize,
                 Parent = TitleHolder,
             })
