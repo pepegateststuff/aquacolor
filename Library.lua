@@ -1067,7 +1067,7 @@ local function ParentUI(UI: Instance, SkipHiddenUI: boolean?)
 end
 
 local ScreenGui = New("ScreenGui", {
-    Name = "Obsidian",
+    Name = tostring(game:GetService("HttpService"):GenerateGUID(false)),
     DisplayOrder = 999,
     ResetOnSpawn = false,
 })
@@ -5257,14 +5257,12 @@ function Library:CreateWindow(WindowInfo)
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
             Parent = MainFrame,
         })
-		for i = 1,6,1 do
-		    New("UIStroke", {
-	            u.Color = Color3.fromRGB(79, 248, 255)
-			    u.Thickness = i
-			    u.Transparency = i/10+0.4
-	            Parent = MainFrame,
-	        })
-		end
+	for i = 1,6,1 do
+	    local u = Instance.new("UIStroke", MainFrame)
+	    u.Color = Color3.fromRGB(79, 248, 255)
+	    u.Thickness = i
+	    u.Transparency = i/10+0.4
+	end
 	
         do
             local Lines = {
