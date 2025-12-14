@@ -5214,7 +5214,6 @@ function Library:CreateWindow(WindowInfo)
         WindowInfo.Font = Font.fromEnum(WindowInfo.Font)
     end
 
-	Library.Icon = "droplet"
     Library.CornerRadius = WindowInfo.CornerRadius
     Library:SetNotifySide(WindowInfo.NotifySide)
     --Library.ShowCustomCursor = WindowInfo.ShowCustomCursor
@@ -5324,8 +5323,9 @@ function Library:CreateWindow(WindowInfo)
 
         if WindowInfo.Icon then
             New("ImageLabel", {
-                Image = if tonumber(WindowInfo.Icon) then `rbxassetid://{WindowInfo.Icon}` else WindowInfo.Icon,
-                Size = WindowInfo.IconSize,
+                --Image = if tonumber(WindowInfo.Icon) then `rbxassetid://{WindowInfo.Icon}` else WindowInfo.Icon,
+                Image = CheckIcon("droplet")
+				Size = WindowInfo.IconSize,
                 Parent = TitleHolder,
             })
         end
