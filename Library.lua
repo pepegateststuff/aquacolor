@@ -5216,7 +5216,7 @@ function Library:CreateWindow(WindowInfo)
 
     Library.CornerRadius = WindowInfo.CornerRadius
     Library:SetNotifySide(WindowInfo.NotifySide)
-    Library.ShowCustomCursor = WindowInfo.ShowCustomCursor
+    --Library.ShowCustomCursor = WindowInfo.ShowCustomCursor
     Library.Scheme.Font = WindowInfo.Font
     Library.ToggleKeybind = WindowInfo.ToggleKeybind
 
@@ -6446,6 +6446,7 @@ function Library:CreateWindow(WindowInfo)
             pcall(function()
                 RunService:UnbindFromRenderStep("ShowCursor")
             end)
+			--[[
             RunService:BindToRenderStep("ShowCursor", Enum.RenderPriority.Last.Value, function()
                 UserInputService.MouseIconEnabled = not Library.ShowCustomCursor
 
@@ -6458,6 +6459,7 @@ function Library:CreateWindow(WindowInfo)
                     RunService:UnbindFromRenderStep("ShowCursor")
                 end
             end)
+			]]
         elseif not Library.Toggled then
             TooltipLabel.Visible = false
             for _, Option in pairs(Library.Options) do
