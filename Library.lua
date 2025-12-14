@@ -98,21 +98,21 @@ local ObsidianImageManager = {
     Assets = {
         TransparencyTexture = {
             RobloxId = 139785960036434,
-            Path = "Obsidian/assets/TransparencyTexture.png",
+            Path = "aquacolor/assets/TransparencyTexture.png",
 
             Id = nil
         },
         
         SaturationMap = {
             RobloxId = 4155801252,
-            Path = "Obsidian/assets/SaturationMap.png",
+            Path = "aquacolor/assets/SaturationMap.png",
 
             Id = nil
         }
     }
 }
 do
-    local BaseURL = "https://raw.githubusercontent.com/deividcomsono/Obsidian/refs/heads/main/"
+    local BaseURL = "https://raw.githubusercontent.com/pepegateststuff/aquacolor/refs/heads/main/"
 
     local function RecursiveCreatePath(Path: string, IsFile: boolean?)
         if not isfolder or not makefolder then return end
@@ -170,7 +170,7 @@ do
             return
         end
 
-        local URLPath = AssetPath:gsub("Obsidian/", "")
+        local URLPath = AssetPath:gsub("aquacolor/", "")
         writefile(AssetPath, game:HttpGet(`{BaseURL}{URLPath}`))
     end
 
