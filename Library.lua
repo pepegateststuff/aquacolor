@@ -3623,6 +3623,7 @@ do
             Prefix = Info.Prefix,
             Suffix = Info.Suffix,
             Compact = Info.Compact,
+			HideText = Info.HideText,
             Rounding = Info.Rounding,
 
             Tooltip = Info.Tooltip,
@@ -3715,6 +3716,8 @@ do
 
             if Info.Compact then
                 DisplayLabel.Text = string.format("%s: %s%s%s", Slider.Text, Slider.Prefix, Slider.Value, Slider.Suffix)
+			elseif Info.HideText then
+                DisplayLabel.Text = string.format("%s%s%s", Slider.Prefix, Slider.Value, Slider.Suffix)
             elseif Info.HideMax then
                 DisplayLabel.Text = string.format("%s%s%s", Slider.Prefix, Slider.Value, Slider.Suffix)
             else
